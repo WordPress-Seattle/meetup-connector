@@ -15,7 +15,7 @@ class Meetup_Connector {
     }
 	
 	public static function include_file( $path ) {
-		if ( !empty( $path ) {
+		if ( !empty( $path ) ) {
 			if ( '/' == $path[0] ) {
 				include untrailingslashit( plugin_dir_path( __FILE__ ) ) . $path;
 			} else {
