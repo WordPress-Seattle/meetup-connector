@@ -11,8 +11,18 @@
 
 class Meetup_Connector {
     public static function start() {
-
+		self::include_file( 'includes/profile.php' );
     }
+	
+	public static function include_file( $path ) {
+		if ( !empty( $path ) {
+			if ( '/' == $path[0] ) {
+				include untrailingslashit( plugin_dir_path( __FILE__ ) ) . $path;
+			} else {
+				include trailingslashit( plugin_dir_path( __FILE__ ) ) . $path;
+			}
+		}
+	}
 }
 
 Meetup_Connector::start();
